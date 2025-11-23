@@ -51,6 +51,8 @@ env/
 
 # Data directories (DICOM files, patches, etc.)
 MUV_*/
+MUV_0635/
+MUV_0635-2/
 *.dcm
 *.tif
 *.tiff
