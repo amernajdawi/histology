@@ -55,7 +55,9 @@ MUV_*/
 *.tif
 *.tiff
 
-
+# Output image directories (ignore these specific directories)
+outputs_success/heatmaps/
+outputs_success/overlays/
 
 # Model checkpoints
 fastglioma_ckpts*/
