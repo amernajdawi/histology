@@ -1,0 +1,21 @@
+{
+    "manual_pairs": {
+        "MUV_0635-2_series_01": [
+            ["strip_03", "strip_04"]
+        ],
+        "MUV_0635-2_series_02": []
+    },
+    "stitch_config": {
+        "MUV_0635-2_series_01": {
+            "excluded_strips": [1, 2, 11, 5, 6, 7, 10, 15, 16, 17, 20, 12],
+            "first_strips": [18, 19],
+            "last_strips": [14]
+        },
+        "MUV_0635-2_series_02": {
+            "excluded_strips": [],
+            "first_strips": null,
+            "last_strips": null
+        }
+    }
+}
+

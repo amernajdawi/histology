@@ -1,0 +1,89 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Model checkpoints and large files
+*.ckpt
+*.pth
+*.th
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# Image outputs (large files)
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.dcm
+*.dicom
+
+# But keep example/important images
+!unnamed.png
+!README.md
+
+# Data directories (large)
+MUV_0635/
+MUV_0635-2/
+stitched_images/
+overlaid_strips/
+combined_strips/
+gradcam_heatmaps/
+strips_heatmaps/
+outputs_success/
+
+# Archive and unused scripts
+archive/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
