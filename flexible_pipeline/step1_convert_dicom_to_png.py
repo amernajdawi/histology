@@ -234,6 +234,8 @@ def main():
                        help='Path to FastGlioma checkpoint (default: fastglioma_ckpts/fastglioma_highres_model.ckpt)')
     parser.add_argument('--output-dir', type=str, default='strips_heatmaps',
                        help='Output directory for PNG strips (default: strips_heatmaps)')
+    parser.add_argument('--max-strips', type=int, default=None,
+                       help='Process only the first N strips (for quick test). Default: process all.')
     
     args = parser.parse_args()
     
@@ -304,8 +306,18 @@ def main():
             # Sort by position number
             strip_files_with_pos.sort(key=lambda x: x[0])
             
+            # Limit to max_strips total (across all series) if set (for quick test run)
+            if args.max_strips is not None and total_processed >= args.max_strips:
+                break
+            if args.max_strips is not None:
+                remaining = args.max_strips - total_processed
+                strip_files_with_pos = strip_files_with_pos[: remaining]
+                print(f"  (Limiting to {len(strip_files_with_pos)} strips this series; {total_processed} already done)")
+            
             results = []
             for position, strip_file in strip_files_with_pos:
+                if args.max_strips is not None and total_processed + len(results) >= args.max_strips:
+                    break
                 # Use position number from filename, not sequential index
                 output_name = f"{dataset['name']}_series_{series_num}_strip_{position:02d}_{strip_file.stem}"
                 result = reconstructor.process_individual_strip(strip_file, output_name)
@@ -314,6 +326,11 @@ def main():
             
             print(f"  ✓ Processed {len(results)}/{len(strip_files)} strips")
             total_processed += len(results)
+            if args.max_strips is not None and total_processed >= args.max_strips:
+                print(f"  Reached max_strips={args.max_strips}. Stopping.")
+                break
+        if args.max_strips is not None and total_processed >= args.max_strips:
+            break
     
     print("\n" + "="*80)
     print("COMPLETE!")
