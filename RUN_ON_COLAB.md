@@ -41,7 +41,7 @@ If you prefer to keep the dataset in Drive instead of gdown:
 2. In the notebook, **skip the gdown cell** and run **Section 2 (Optional) Use Google Drive**.
 3. Mount Drive and set either:
    - `DRIVE_DATASET_ZIP = "/content/drive/MyDrive/yourfile.zip"`, or  
-   - `DRIVE_DATASET_PATH = "/content/drive/MyDrive/your_dataset_folder"`
+   - `DRIVE_DATASET_PATH = "/content/drive/MyDrive"` (default; use if Meta_MasterThesis.tar is in My Drive root)
 4. Continue with the rest of the notebook.
 
 ---
