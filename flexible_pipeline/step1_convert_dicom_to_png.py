@@ -24,8 +24,8 @@ import torch
 from torchvision.transforms import Compose
 from PIL import Image
 
-# Add fastglioma to path (assumes it's in parent directory)
-sys.path.insert(0, str(Path(__file__).parent.parent / "fastglioma"))
+# Add pipeline root so "fastglioma" package is found (fastglioma/ is under pipeline root)
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from fastglioma.datasets.improc import get_srh_base_aug
 from fastglioma.models.resnet import resnet_backbone
