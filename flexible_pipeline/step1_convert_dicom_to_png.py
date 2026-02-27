@@ -255,8 +255,8 @@ def main():
     print(f"Output directory: {output_dir}")
     
     if not checkpoint_path.exists():
-        print(f"\n✗ ERROR: Checkpoint not found: {checkpoint_path}")
-        sys.exit(1)
+        print(f"\n! WARNING: Checkpoint not found: {checkpoint_path}")
+        print("  Continuing without loading FastGlioma weights; PNG conversion will still run.")
     
     # Auto-detect datasets and series
     datasets = find_datasets_and_series(base_dir)
