@@ -30,6 +30,7 @@ No need to “Add to My Drive” or set dataset paths. For very large files, gdo
 ### 4. Run the rest of the notebook
 
 - Run the remaining cells in order (clone FastGlioma, run Steps 1–6). Results go to `/content/work/`. Optionally run the last section to copy outputs to Drive.
+- **If FastGlioma install fails** ("Getting requirements to build wheel" / "subprocess-exited-with-error"): run the **next cell** (fallback), which installs only the dependencies without version pins. The notebook then uses the FastGlioma source from the clone; no need to retry `pip install -e .`.
 
 ---
 
