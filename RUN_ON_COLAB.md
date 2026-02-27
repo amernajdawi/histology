@@ -64,6 +64,12 @@ Step 1 (DICOM → PNG) needs the FastGlioma checkpoint. Without it, Step 1 will 
 
 ---
 
+## If you see "getcwd: cannot access parent directories" or "The folder you are executing pip from can no longer be found"
+
+The Colab shell's current directory is in a bad state (e.g. you were in a folder that was deleted). **Restart the runtime:** Runtime → Restart runtime. Then run the notebook again from the start (or from Section 2 if you use Drive, then Section 3). The notebook now resets to `/content` before cloning FastGlioma to avoid this.
+
+---
+
 ## Summary
 
 | Step | What you need |
